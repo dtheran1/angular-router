@@ -22,8 +22,6 @@ export class ProductsComponent {
   @Output() loadMore = new EventEmitter();
   showProductDetail = false;
   productChosen: Product | null = null;
-  limit = 10;
-  offset = 0;
   statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
 
   constructor(
