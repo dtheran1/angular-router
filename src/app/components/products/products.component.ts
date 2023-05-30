@@ -21,7 +21,8 @@ export class ProductsComponent {
   @Input() products: Product[] = [];
   // @Input() productId: Product['id'] | null = null;
   @Input()
-  set productId(id: Product['id'] | null) {
+  set productId(id: Product['id'] | null) {  // Con este Set estamos haciendo como especie de un observador, mira los cambios constantes que tiene el parametro del set en este caso el id y ejecutamos code
+   // Ojo que en este caso estamos recibiendo una prop llamada productId y la estamos seteando dentro del componente.
     if (id) {
       this.onShowDetail(id);
     }
