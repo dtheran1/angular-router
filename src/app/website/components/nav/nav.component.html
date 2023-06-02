@@ -18,7 +18,11 @@
     <ul>
       <li><a routerLinkActive="active" routerLink="home">All</a></li>
       <li *ngFor="let category of categories">
-        <a routerLinkActive="active" [routerLink]="['/category', category.id]">{{ category.name }}</a>
+        <a
+          routerLinkActive="active"
+          [routerLink]="['/category', category.id]"
+          >{{ category.name }}</a
+        >
       </li>
     </ul>
   </div>
@@ -32,7 +36,11 @@
       <ul>
         <li><a routerLinkActive="active" routerLink="home">All</a></li>
         <li *ngFor="let category of categories">
-          <a routerLinkActive="active" [routerLink]="['/category', category.id]">{{ category.name }}</a>
+          <a
+            routerLinkActive="active"
+            [routerLink]="['/category', category.id]"
+            >{{ category.name }}</a
+          >
         </li>
       </ul>
     </nav>
@@ -41,7 +49,10 @@
         <button *ngIf="!profile; else elseBlock" (click)="login()">
           Login
         </button>
-        <ng-template #elseBlock>{{ profile?.email }}</ng-template>
+        <ng-template #elseBlock>
+          <a routerLink="/profile">{{ profile?.email }}</a>
+          <button (click)="logout()" >Logout</button>
+        </ng-template>
       </div>
       <div class="cart">
         <a href="">
